@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --blue-700: #1a56db;
+  --blue-50: #eff6ff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --red-600: #dc2626;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  overflow: visible;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+header p {
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Utilities */
+.loading {
+  color: var(--gray-500);
+  padding: 2rem 0;
+}
+
+.error {
+  background: #fef2f2;
+  color: var(--red-600);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #fecaca;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+section {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Auto-ingest notice */
+.auto-ingest-notice {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auto-ingest-notice h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.auto-ingest-notice p {
+  margin: 0.25rem 0;
+  opacity: 0.95;
+}
+
+.auto-ingest-notice .subtext {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-top: 0.75rem;
+}
+
+/* Large spinner for auto-ingest */
+.spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

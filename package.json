@@ -1,0 +1,21 @@
+{
+  "name": "ecfr-regulation-analyzer",
+  "version": "1.0.0",
+  "description": "eCFR Regulation Analyzer - Federal regulation analytics for deregulation decision-making",
+  "author": "Loc Le",
+  "license": "ISC",
+  "scripts": {
+    "setup": "npm run setup:frontend && npm run setup:backend",
+    "setup:frontend": "cd frontend && npm install",
+    "setup:backend": "python3 -m venv .venv && . .venv/bin/activate && pip install -r backend/src/requirements.txt",
+    "dev": "npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "deploy:backend": "cd backend && make deploy ENV=${ENV:-dev} REGION=${REGION:-us-west-1}",
+    "deploy:frontend": "cd backend && make deploy-frontend ENV=${ENV:-dev}",
+    "deploy:all": "npm run deploy:backend && npm run deploy:frontend",
+    "deploy": "npm run deploy:all",
+    "clean": "cd backend && make clean",
+    "clean:all": "npm run clean && cd frontend && rm -rf dist node_modules"
+  }
+}
